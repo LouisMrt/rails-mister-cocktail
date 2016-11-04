@@ -1,0 +1,13 @@
+<%= form_for(@cocktail) do |f| %>
+  <% if @cocktail.errors.any? %>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.text_field :image, {class: "form-control"} %>
+  </div>
+  <%= f.submit :class => 'btn btn-default' %>
+<% end %>

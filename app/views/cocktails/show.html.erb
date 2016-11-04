@@ -1,0 +1,19 @@
+<h1><%= @cocktail.name %></h1><%= link_to "Edit", edit_cocktail_path(@cocktail), :class => "btn btn-default" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 text-center">
+       <%= image_tag(@cocktail.image, :alt => @cocktail.name, :class => "img-circle show_image") %>
+    </div>
+    <div class="col-sm-6 col-md-8">
+      <h3>Ingredients</h3>
+      <ul class="list-group">
+        <% @cocktail.doses.each do |dose| %>
+          <li class="list-group-item">
+            <%= dose.ingredient.name %> (<%= dose.description %>)
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

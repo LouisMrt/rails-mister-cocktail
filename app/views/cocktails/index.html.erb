@@ -1,0 +1,17 @@
+<h1>Cocktails</h1>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= image_tag(cocktail.image, :alt => cocktail.name, :style => "height: 300px;") %>
+          <div class="caption text-center">
+            <h4><%= cocktail.name %></h4>
+            <%= link_to "Show", cocktail_path(cocktail), :class => "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
